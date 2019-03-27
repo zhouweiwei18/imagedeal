@@ -37,82 +37,21 @@
 			<div class="menu">
 				<ul>
 					<li class="nli first" id="nav1_1"><span><a
-							target="_self" href="javascript:void(0)">首页</a></span></li>
-					<li class="nli" id="nav1_2"><span><a target="_self"
-							href="javascript:void(0)">产品&amp;服务</a></span>
-						<div class="sub">
-							<div class="container">
-								<div class="c_378">
-									<h2>产品&amp;服务</h2>
-									<h3>Products&amp;Services</h3>
-									<div class="bian"></div>
-								</div>
-								<ul class="ul1">
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_12589561.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_1_h6054932.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>网站建设</h4>
-									</a></li>
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_29788755.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_2_h5422278.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>SEO排名</h4>
-									</a></li>
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_32337037.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_3_h6584472.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>软文营销</h4>
-									</a></li>
+							target="_blank" href=people.jsp>人像</a></span></li>
+					<li class="nli" id="nav1_2"><span>
+					<a target="_blank" href=plants.jsp>植物</a></span>
+					</li>
+					<li class="nli" id="nav1_3"><span><a target="_blank"
+							href=animals.jsp>动物</a></span></li>
 
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_46812594.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_4_h4308426.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>域名空间</h4>
-									</a></li>
+					<li class="nli" id="nav1_4"><span><a target="_blank"
+							href=scenery.jsp>风景</a></span></li>
 
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_53967141.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_5_h2603855.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>网站认证</h4>
-									</a></li>
+					<li class="nli" id="nav1_5"><span><a target="_blank"
+							href=stilllife.jsp>静物</a></span></li>
 
-									<li class="l1"><a target="_self" href="javascript:void(0)">
-											<div class="ico">
-												<img src="images/ico1_68137942.png" alt="产品&amp;服务"
-													class="img_1"> <img src="images/ico1_6_h5676011.png"
-													alt="产品&amp;服务" class="img_2">
-											</div>
-											<h4>物联平台</h4>
-									</a></li>
-								</ul>
-							</div>
-						</div></li>
-					<li class="nli" id="nav1_3"><span><a target="_self"
-							href="javascript:void(0);">方案&amp;报价</a></span></li>
-
-					<li class="nli" id="nav1_4"><span><a target="_self"
-							href="javascript:void(0);">网站案例</a></span></li>
-
-					<li class="nli" id="nav1_5"><span><a target="_self"
-							href="javascript:void(0);">互联网课堂</a></span></li>
-
-					<li class="nli" id="nav1_6"><span><a target="_self"
-							href="javascript:void(0);">十七缘起</a></span></li>
+					<li class="nli" id="nav1_6"><span><a target="_blank"
+							href=home.jsp>家居</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">
@@ -143,9 +82,8 @@
 		<div class="c_0100_2">
 			<div class="container">
 				<div class="tit_1">
-					<h3 class="wow fadeInUp">brand case</h3>
-					<h4 class="wow fadeInUp" data-wow-delay="0.2s">品牌案例 /
-						用设计帮助企业创造更大的商业价值</h4>
+					<h3 class="wow fadeInUp">Picture Catelogy</h3>
+					<h4 class="wow fadeInUp" data-wow-delay="0.2s">图像处理/选择你需要的种类</h4>
 				</div>
 				<div class="row_2">
 					<ul class="ul_1">
@@ -153,37 +91,31 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="图伽汽车科技" src="images/9522327.jpg" width="100%">
+									<img alt="图伽汽车科技" src="images/11912080.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">图伽汽车科技</div>
-									<div class="p">你只想要酒桌上的迷离，却没在意是谁把你扶起。</div>
+									<div class="name elli">植物</div>
+									<div class="p">娇艳欲滴的花朵</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=plants.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">图伽汽车科技</a>
+										<a href="javascript:;" class="elli">植物</a>
 										<!-- <span><img
 											alt="" src="images/12987083479469.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="images/c.aspx"></script></span> <span><img alt=""
-												src="images/ico3_3.png"> <script
+											<span> <script src="images/c.aspx"></script></span> <span>
+													<script
 													src="images/zan_case.aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+												
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0);"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+									
 									</div>
 								</div>
 							</div>
@@ -192,36 +124,30 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0);">
-									<img alt="东大建筑设计集团" src="images/2582330.jpg" width="100%">
+									<img alt="东大建筑设计集团" src="images/11786146.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">东大建筑设计集团</div>
+									<div class="name elli">风景</div>
 									<div class="p">不要怕，我们大多数遇见的人，只是看起来很厉害而已。</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=scenery.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">东大建筑设计集团</a>
+										<a href="javascript:;" class="elli">风景</a>
 										<!-- <span><img
 											alt="" src="images/45411698740906.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png">965</span> <span><img
-												alt="" src="images/ico3_3.png"> <script
+											 <script
 													src="images/zan_case(1).aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+													
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0);"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -230,36 +156,30 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0);">
-									<img alt="君搜宝官网" src="images/9492988.jpg" width="100%">
+									<img alt="君搜宝官网" src="images/896839.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">君搜宝官网</div>
+									<div class="name elli">人像</div>
 									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=people.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">君搜宝官网</a>
+										<a href="javascript:;" class="elli">人像</a>
 										<!-- <span><img alt="" src="images/64145427964285.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="./c(1).aspx"></script></span> <span><img alt=""
-												src="images/ico3_3.png"> <script
+											  <script
+													src="./c(1).aspx"></script></span> <script
 													src="./zan_case(2).aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+													 
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0);"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+										 
 									</div>
 								</div>
 							</div>
@@ -268,36 +188,30 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="北京声达木业有限公司" src="images/3522574.jpg" width="100%">
+									<img alt="北京声达木业有限公司" src="images/1005319.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">北京声达木业有限公司</div>
+									<div class="name elli">静物</div>
 									<div class="p">我们总回忆过去，因为在现实面前一筹莫展。</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=stilllife.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">北京声达木业有限公司</a>
+										<a href="javascript:;" class="elli">静物</a>
 										<!-- <span><img alt="" src="images/111111281933.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="./c(2).aspx"></script></span> <span><img alt=""
-												src="images/ico3_3.png"> <script
+											 <script
+													src="./c(2).aspx"></script></span>   <script
 													src="./zan_case(3).aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+													 
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0);"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+										 
 									</div>
 								</div>
 							</div>
@@ -306,36 +220,30 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="大智金科" src="images/7712653.jpg" width="100%">
+									<img alt="大智金科" src="images/14554088.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">大智金科</div>
+									<div class="name elli">家居</div>
 									<div class="p">我在杯子里看到你的容颜，却已是匆匆那年。</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=home.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">大智金科</a>
+										<a href="javascript:;" class="elli">家居</a>
 										<!-- <span><img alt="" src="./116897887.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="./c(3).aspx"></script></span> <span><img alt=""
-												src="images/ico3_3.png"> <script
+										  <script
+													src="./c(3).aspx"></script></span>  <script
 													src="./zan_case(4).aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+													 
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0)"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+										 
 									</div>
 								</div>
 							</div>
@@ -344,17 +252,17 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="北京乐益口腔健康品牌" src="images/9242065.jpg" width="100%">
+									<img alt="北京乐益口腔健康品牌" src="images/11845961.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">北京乐益口腔健康品牌</div>
-									<div class="p">再见，再也找不到那家店。</div>
+									<div class="name elli">动物</div>
+									<div class="p">守候着，陪伴着你的一生</div>
 									<div class="more">
-										<a href="javascript:;"><img alt="" src="images/btn3.png"></a>
+										<a href=animals.jsp><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">北京乐益口腔健康品牌</a>
+										<a href="javascript:;" class="elli">动物</a>
 										<!-- <span><img alt="" src="images/116985794.png"></span> -->
 									</h4>
 									<div class="p">
@@ -363,21 +271,15 @@
 													src="./c(4).aspx"></script></span>
 										</div> -->
 										<div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="./c(3).aspx"></script></span> <span><img alt=""
-												src="images/ico3_3.png"> <script
+										  <script
+													src="./c(3).aspx"></script></span>   <script
 													src="./zan_case(4).aspx"></script></span> <span><div
 													class="bshare-custom">
 													<div class="bsPromo bsPromo2"></div>
-													<a title="更多平台"
-														class="bshare-more bshare-more-icon more-style-addthis"><img
-														alt="" style="height: 100%" src="images/ico3_4.png"></a>
+													 
 												</div></span>
 										</div>
-										<div class="p_r">
-											<a href="javascript:void(0)"><img alt=""
-												src="images/ico3_5.png"></a>
-										</div>
+										 
 									</div>
 								</div>
 							</div>

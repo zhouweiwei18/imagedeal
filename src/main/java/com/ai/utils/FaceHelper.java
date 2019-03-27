@@ -54,9 +54,9 @@ public class FaceHelper {
     private static final String KEY_FAILED_COUNT = "failedCount";
 
     // 存放张张嘴脸部对比数据的 map
-    private static Map<String, Object> mouthCheckMap = new HashMap<>();
+    private static Map<String, Object> mouthCheckMap = new HashMap<String, Object>();
     // 存放眨眨眼脸部对比数据的 map
-    private static Map<String, Object> eyeCheckMap = new HashMap<>();
+    private static Map<String, Object> eyeCheckMap = new HashMap<String, Object>();
 
     public static byte[] post(String api, HashMap<String, String> map, HashMap<String, byte[]> fileMap) throws Exception {
         HttpURLConnection conne;
@@ -140,7 +140,7 @@ public class FaceHelper {
      * @param imgBase64
      */
     public static DataResp faceDetect(String imgBase64) {
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, String> map = new HashMap<String, String>();
         map.put("api_key", API_KEY); // 调用此API的API Key
         map.put("api_secret", API_SECRET); // 调用此API的API Secret
         map.put("return_landmark", "1"); // 是否检测并返回人脸关键点，1 表示返回 83 个人脸关键点
@@ -207,7 +207,7 @@ public class FaceHelper {
      */
     public static DataResp faceCompare(String imgBase64No1, String imgBase64No2) {
 
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, String> map = new HashMap<String, String>();
         map.put("api_key", API_KEY);
         map.put("api_secret", API_SECRET);
         map.put("image_base64_1", imgBase64No1); // 用于对比的第一张 base64 编码图片

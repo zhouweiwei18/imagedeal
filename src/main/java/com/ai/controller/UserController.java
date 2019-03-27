@@ -54,21 +54,4 @@ public class UserController {
 		return userService.login(user, passwordLogin, request);
 	}
 
-	/*
-	 * @RequestMapping("/userLogin") public String userLogin(String username, String
-	 * password, HttpServletRequest request) {
-	 * 
-	 * // 判断用户名是否为空 if ((username != null && password != null) &&
-	 * (!username.equals("") && !password.equals(""))) { // 查询用户是否存在 User user =
-	 * userService.userLogin(username, password); // 判断user是否为空 if (user == null) {
-	 * return "login"; } else { // 查看session中是否已经存在该用户 // 获得session HttpSession
-	 * session = request.getSession(); User userSession = (User)
-	 * session.getAttribute("user"); // 若session中没有用户信息，则放入该用户对象 if (userSession ==
-	 * null) { session.setAttribute("user", user); } //
-	 * System.out.println(request.getSession().getAttribute("user")); // 返回成功标识
-	 * return "index"; } }
-	 * 
-	 * return "login"; }
-	 */
-
 }

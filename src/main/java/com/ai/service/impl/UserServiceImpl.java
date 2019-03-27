@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
 		return dataResp;
 	}
 
-	@Override
+ 
 	public DataResp addUser(User user) {
 		// 识别人脸
 		DataResp dataResp = FaceHelper.faceDetect(user.getFacecode());
@@ -137,7 +137,7 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-	@Override
+ 
 	public List<User> selectUserByName(String username) {
 
 		UserExample example = new UserExample();

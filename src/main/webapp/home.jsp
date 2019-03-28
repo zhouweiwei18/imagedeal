@@ -36,22 +36,27 @@
 		<div class="container">
 			<div class="menu">
 				<ul>
+				<li class="nli first" id="nav1_1">
+						<span>
+							<a target="_self" href="${pageContext.request.contextPath }/index.jsp">首页</a>
+						</span>
+					</li>
 					<li class="nli first" id="nav1_1"><span><a
-							target="_self" href="javascript:void(0)">人像</a></span></li>
+							target="_self" href="j${pageContext.request.contextPath }/people.jsp">人像</a></span></li>
 					<li class="nli" id="nav1_2"><span>
-					<a target="_blank" href=plants.jsp>植物</a></span>
+					<a target="_blank" href="${pageContext.request.contextPath }/plants.jsp">植物</a></span>
 					</li>
 					<li class="nli" id="nav1_3"><span><a target="_blank"
-							href=animals.jsp>动物</a></span></li>
+							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href=scenery.jsp>风景</a></span></li>
+							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
-							href=stilllife.jsp>静物</a></span></li>
+							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
 
 					<li class="nli" id="nav1_6"><span><a target="_blank"
-							href=home.jsp>家居</a></span></li>
+							href="${pageContext.request.contextPath }/home.jsp">家居</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">

@@ -17,7 +17,7 @@ public class ImageUtil {
 	public ImageUtil() {
 		client = new AipImageClassify(APP_ID, API_KEY, SECRET_KEY);
 	}
-	
+
 	public static ImageUtil getUtil() {
 		return new ImageUtil();
 	}
@@ -27,14 +27,15 @@ public class ImageUtil {
 	 * 
 	 * @param client
 	 */
-	public void universalIdentification(String image) {
+	public JSONObject universalIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("baike_num", "5");
 
 		// 参数为本地路径
 		JSONObject res = client.advancedGeneral(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 	}
 
 	/**
@@ -42,7 +43,7 @@ public class ImageUtil {
 	 * 
 	 * @param client
 	 */
-	public void FoodIdentification(String image) {
+	public JSONObject FoodIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("top_num", "3");
@@ -51,7 +52,8 @@ public class ImageUtil {
 
 		// 参数为本地路径
 		JSONObject res = client.dishDetect(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 
 	}
 
@@ -60,7 +62,7 @@ public class ImageUtil {
 	 * 
 	 * @param client
 	 */
-	public void carIdentification(String image) {
+	public JSONObject carIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("top_num", "3");
@@ -68,20 +70,22 @@ public class ImageUtil {
 
 		// 参数为本地路径
 		JSONObject res = client.carDetect(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 	}
 
 	/**
 	 * logo商标识别
 	 */
-	public void logoIdentification(String image) {
+	public JSONObject logoIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("custom_lib", "false");
 
 		// 参数为本地路径
 		JSONObject res = client.logoSearch(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 
 	}
 
@@ -90,7 +94,7 @@ public class ImageUtil {
 	 * 
 	 * @param client
 	 */
-	public void animalIdentification(String image) {
+	public JSONObject animalIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("top_num", "3");
@@ -98,7 +102,8 @@ public class ImageUtil {
 
 		// 参数为本地路径
 		JSONObject res = client.animalDetect(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 	}
 
 	/**
@@ -123,14 +128,15 @@ public class ImageUtil {
 	 * 
 	 * @param client
 	 */
-	public void objectIdentification(String image) {
+	public JSONObject objectIdentification(String image) {
 		// 传入可选参数调用接口
 		HashMap<String, String> options = new HashMap<String, String>();
 		options.put("with_face", "0");
 
 		// 参数为本地路径
 		JSONObject res = client.objectDetect(image, options);
-		System.out.println(res.toString(2));
+
+		return res;
 	}
 
 }

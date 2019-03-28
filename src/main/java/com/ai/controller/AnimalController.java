@@ -11,29 +11,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ai.utils.ImageUtil;
 
 @Controller
-@RequestMapping("/plants")
-public class PlantsController {
+@RequestMapping("/animal")
+public class AnimalController {
 
-	/**
-	 * 用于植物的识别
-	 */
-	@RequestMapping(value = "/plantsIdent")
+	@RequestMapping(value = "/animalIdent")
 	@ResponseBody
-	public HashMap<String, Object> plantsIdent(String plantsPath) {
+	public HashMap<String, Object> plantsIdent(String animalPath) {
 		// 根据地址找到对应的图片，进行图片识别
 		// 假设这是一张植物类别的图片(路径)=========应该是变量
-
-		if (plantsPath == null) {
+		if (animalPath == null) {
 			// 这里对于本机而言
-			plantsPath = "D:\\Picture\\sunflower.jpg";
+			animalPath = "D:\\Picture\\cat.jpg";
 		}
 
-		JSONObject obj = ImageUtil.getUtil().plantIdentification(plantsPath);
+		JSONObject obj = ImageUtil.getUtil().animalIdentification(animalPath);
 
 		Map<String, Object> map2 = obj.toMap();
 
 		return (HashMap<String, Object>) map2;
 
 	}
-
 }

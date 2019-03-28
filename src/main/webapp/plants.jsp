@@ -24,6 +24,7 @@
 <!--首页banner效果样式end-->
 
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
 <link href="css/slick.css" rel="stylesheet">
 <link href="css/slick-theme.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -35,8 +36,8 @@
             font-size: 40px;
         }
         .bg {
-            background: url('images/flower.jpg');
-            height:600px;
+            background: url('images/4.jpg');
+            height:670px;
             text-align: center;
             line-height: 900px;
         }
@@ -68,21 +69,29 @@
 		<div class="container">
 			<div class="menu">
 				<ul>
-					<li class="nli first" id="nav1_1"><span><a
-							target="_self" href="javascript:void(0)">人像</a></span></li>
+					<li class="nli first" id="nav1_1">
+						<span>
+							<a target="_self" href="index.jsp">首页</a>
+						</span>
+					</li>
+					<li class="nli first" id="nav1_1">
+						<span>
+							<a target="_self" href="${pageContext.request.contextPath }/people.jsp">人像</a>
+						</span>
+					</li>
 					<li class="nli" id="nav1_2"><span> <a target="_blank"
-							href=plants.jsp>植物</a></span></li>
+							href="${pageContext.request.contextPath }/plants.jsp">植物</a></span></li>
 					<li class="nli" id="nav1_3"><span><a target="_blank"
-							href=animals.jsp>动物</a></span></li>
+							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href=scenery.jsp>风景</a></span></li>
+							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
-							href=stilllife.jsp>静物</a></span></li>
+							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
 
 					<li class="nli" id="nav1_6"><span><a target="_blank"
-							href=home.jsp>家居</a></span></li>
+							href="${pageContext.request.contextPath }/home.jsp">家居</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">
@@ -115,17 +124,21 @@
 	<div class="bg bg-blur"></div>
 	
 	<div style="width: 599px;float: left;margin-left: 80px;margin-top: 100px;position:absolute;">
-		<img alt="" src="images/sunflower.jpg">
+		<img alt="" src="images/sunflower.jpg" style="border-radius:10px;">
+		<br>
+	 	<br>
+		<div style="float: left;margin-left: 215px;margin-top: 18px;"></div>
+		<a class="button button-glow button-border button-rounded button-primary">选择图片</a>
 	</div>
 	
 	<!-- <h4 align=center>植物</h4> -->
-	<div style="float: right;position:absolute;margin-left: 713px;margin-top: 70px;">
+	<div style="float: right;position:absolute;margin-left: 713px;margin-top: 80px;">
 		<table id="info" class="table table-hover" style="text-align: center;width: 700px;float:right;">
 		</table>
 	</div>
 	
 	<script type="text/javascript">
-	alert("ajax");
+
 	$(function() {
 		$.ajax({
 			type : "POST",

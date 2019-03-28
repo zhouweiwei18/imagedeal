@@ -24,34 +24,71 @@
 <!--首页banner效果样式end-->
 
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
 <link href="css/slick.css" rel="stylesheet">
 <link href="css/slick-theme.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script src="js/checkform.js"></script>
-
+<style type="text/css">
+        .content {
+            color: #ffffff;
+            font-size: 40px;
+        }
+        .bg {
+            background: url('images/girlface.jpg');
+            height:670px;
+            text-align: center;
+            line-height: 900px;
+        }
+        .bg-blur {
+            float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-filter: blur(15px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);
+        }
+        .content-front {
+          position:absolute;
+          left: 10px;
+          right: 10px;
+          height:600px;
+          line-height: 600px;
+          text-align: center;
+        }
+    </style>
 </head>
 <body>
 	<div class="top visible-lg">
 		<div class="container">
 			<div class="menu">
 				<ul>
+				<li class="nli first" id="nav1_1">
+						<span>
+							<a target="_self" href="index.jsp">首页</a>
+						</span>
+					</li>
 					<li class="nli first" id="nav1_1"><span><a
-							target="_self" href="javascript:void(0)">人像</a></span></li>
+							target="_self" href="${pageContext.request.contextPath }/people.jsp">人像</a></span></li>
 					<li class="nli" id="nav1_2"><span>
-					<a target="_blank" href=plants.jsp>植物</a></span>
+					<a target="_blank" href="${pageContext.request.contextPath }/plants.jsp">植物</a></span>
 					</li>
 					<li class="nli" id="nav1_3"><span><a target="_blank"
-							href=animals.jsp>动物</a></span></li>
+							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href=scenery.jsp>风景</a></span></li>
+							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
-							href=stilllife.jsp>静物</a></span></li>
+							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
 
 					<li class="nli" id="nav1_6"><span><a target="_blank"
-							href=home.jsp>家居</a></span></li>
+							href="${pageContext.request.contextPath }/home.jsp">家居</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">
@@ -81,11 +118,39 @@
 		</script>
 		
 	</div>
-	<h4 align=center>人像</h4>
+	<div class="bg bg-blur"></div>
+	
+	<div style="width: 599px;float: left;margin-left: 80px;margin-top: 100px;position:absolute;">
+		<img alt="" src="images/girlface.jpg" style="border-radius:10px;">
+		<br>
+	 	<br>
+		<div style="float: left;margin-left: 215px;margin-top: 18px;"></div>
+		<a class="button button-glow button-border button-rounded button-primary">选择图片</a>
+	</div>
+	
+	<div style="float: right;position:absolute;margin-left: 713px;margin-top: 80px;">
+		<table id="info" class="table table-hover" style="text-align: center;width: 700px;float:right;">
+		</table>
+	</div>
 	
 	<script type="text/javascript">
 		$(function() {
-			alert("这里开始自动获取！");
+			$.ajax({
+				type : "POST",
+				url : "${pageContext.request.contextPath }/face/faceIdent.action",
+				data : {},//json序列化       这里对应的是图片的路径
+				async : false,//这里必须要同步
+				datatype : "json", //此处不能省略 
+				contentType : "application/json; charset=utf-8",//此处不能省略 
+				success : function(data) {
+					 
+					alert("数据接收成功！");
+					 
+				},
+				error : function(data) {
+					alert("error");
+				}
+			})
 		})
 	</script>
 </body>

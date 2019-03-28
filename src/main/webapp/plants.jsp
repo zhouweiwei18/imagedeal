@@ -29,9 +29,41 @@
 <link href="css/style.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script src="js/checkform.js"></script>
+<style type="text/css">
+        .content {
+            color: #ffffff;
+            font-size: 40px;
+        }
+        .bg {
+            background: url('images/flower.jpg');
+            height:600px;
+            text-align: center;
+            line-height: 900px;
+        }
+        .bg-blur {
+            float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-filter: blur(15px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);
+        }
+        .content-front {
+          position:absolute;
+          left: 10px;
+          right: 10px;
+          height:600px;
+          line-height: 600px;
+          text-align: center;
+        }
 
+    </style>
 </head>
-<body>
+<body >
 	<div class="top visible-lg">
 		<div class="container">
 			<div class="menu">
@@ -78,13 +110,20 @@
 				$(this).attr('data-wow-delay', num * 0.2 + 's');
 			})
 		</script>
-
 	</div>
-	<h4 align=center>植物</h4>
 	
+	<div class="bg bg-blur"></div>
 	
+	<div style="width: 599px;float: left;margin-left: 80px;margin-top: 100px;position:absolute;">
+		<img alt="" src="images/sunflower.jpg">
+	</div>
 	
-
+	<!-- <h4 align=center>植物</h4> -->
+	<div style="float: right;position:absolute;margin-left: 713px;margin-top: 70px;">
+		<table id="info" class="table table-hover" style="text-align: center;width: 700px;float:right;">
+		</table>
+	</div>
+	
 	<script type="text/javascript">
 	alert("ajax");
 	$(function() {
@@ -96,45 +135,37 @@
 			datatype : "json", //此处不能省略 
 			contentType : "application/json; charset=utf-8",//此处不能省略 
 			success : function(data) {
-				alert("数据接收成功！");
-				/*这是数据格式
-				"result": [{
-					"score": 0.99979120492935,
-					"name": "莲",
-					"baike_info": {
-						"baike_url": "http://baike.baidu.com/item/%E8%8E%B2/2717141",
-						"description": "莲(Nelumbo nucifera)，又称荷、荷花、莲花、芙蕖、鞭蓉、水芙蓉、水芝、水芸、水旦、水华等，溪客、玉环是其雅称，未开的花蕾称菡萏，已开的花朵称鞭蕖，莲科，属多年生水生宿根草本植物，其地下茎称藕，能食用，叶入药，莲子为上乘补品，花可供观赏。是我国十大名花之一。是印度的国花。莲，双子叶植物，睡莲科。多年生挺水草本植物。根状茎横走，粗而肥厚，节间膨大，内有纵横通气孔道，节部缢缩。叶基生，挺出水面，盾形，直径30-90cm，波状边缘，上面深绿色，下面浅绿色。叶柄有小刺，长1-2m，挺出水面。花单生，直径10-25cm，椭圆花瓣多数，白色或粉红色；花柄长1-2m。花托在果期膨大，直径5-10cm，海绵质。坚果椭圆形和卵圆形，长1.5-2.0cm，灰褐色。种子卵圆形，长1.2-1.7cm，种皮红棕色。生于池塘、浅湖泊及稻田中。中国南北各省有自生或栽培，经济价值高。人们习惯上称种子为“莲子”、地下茎为“藕”、花托为“莲蓬”、叶为“荷叶”。"
-					}
-				},
-				{
-					"score": 0.00015144718054216,
-					"name": "红睡莲"
-				},
-				{
-					"score": 1.2172759852547e-05,
-					"name": "白睡莲"
-				},
-				{
-					"score": 6.305016540864e-06,
-					"name": "延药睡莲"
-				},
-				{
-					"score": 3.6133328649157e-06,
-					"name": "华夏慈姑"
-				}]
-				*/
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				if (data.length > 0) {
-					alert("数据接收成功！");
-				}
+				 //alert(data['log_id']);
+				 //alert(data['result']);
+				 var tab = $("#info");
+				 var title = "<tr><td style='font-size:22px;'><small>相似度</small></td>"+
+				 "<td width='100px'style='font-size:22px;'><small>名称</small></td>"+
+				 "<td width='500px'style='font-size:22px;'><small>相关介绍</small></td></tr>";
+				 
+				 tab.append(title);
+				 
+				 $.each(data['result'], function(i, item) {
+					 //alert(data.result[i].score);
+					 //alert(data.result[i].name);
+				     //alert(data.result[i].baike_info.baike_url);
+					 //alert(data.result[i].baike_info.description);
+					 //下面将数据写入页面
+					 //获取表格
+					 var score = data.result[i].score; 
+					 //alert(score);
+					 var str=Number(score*100).toFixed(3);
+			            str+="%";
+			            //alert(str);
+					 
+					 var trs = "<tr >"+
+			 			"<td>"+str+"</td>"+
+			 			"<td style=' '>"+data.result[i].name+"</td>"+
+			 			"<td style='text-align: left;width=200px;'>"+data.result[i].baike_info.description.substring(0, 80)+"</td>"+
+			 		  "</tr>";
+			 		  
+					 tab.append(trs);
+				});
+				 
 			},
 			error : function(data) {
 				alert("error");
@@ -142,6 +173,5 @@
 		})
 	});
 	</script>
-
 </body>
 </html>

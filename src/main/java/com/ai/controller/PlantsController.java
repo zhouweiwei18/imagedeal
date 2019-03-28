@@ -1,7 +1,7 @@
 package com.ai.controller;
 
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
 
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -29,17 +29,10 @@ public class PlantsController {
 
 		JSONObject obj = ImageUtil.getUtil().plantIdentification(image);
 
-		HashMap<String, Object> data = new HashMap<String, Object>();
-		// 将json字符串转换成jsonObject
-		// JSONObject jsonObject = JSONObject.fromObject(object);
-		Iterator it = obj.keys();
-		// 遍历jsonObject数据，添加到Map对象
-		while (it.hasNext()) {
-			String key = String.valueOf(it.next());
-			Object value = obj.get(key);
-			data.put(key, value);
-		}
-		return data;
+		Map<String, Object> map2 = obj.toMap();
+
+		return (HashMap<String, Object>) map2;
+
 	}
 
 }

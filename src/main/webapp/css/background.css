@@ -1,0 +1,28 @@
+.bg {
+	background: url('images/flower.jpg');
+	height: 600px;
+	text-align: center;
+	line-height: 600px;
+}
+
+.bg-blur {
+	float: left;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter: blur(15px);
+}
+
+.content-front {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	height: 600px;
+	line-height: 600px;
+	text-align: center;
+}

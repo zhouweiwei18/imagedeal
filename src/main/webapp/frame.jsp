@@ -57,7 +57,7 @@
 							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
+							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
 							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
@@ -99,6 +99,39 @@
 				</div>
 				<div class="row_2">
 					<ul class="ul_1">
+					
+					
+					<li class="wow fadeInUp">
+							<div class="zbox">
+								<div class="img" data-href="javascript:void(0);">
+									<img alt="君搜宝官网" src="images/896839.jpg" width="100%">
+									<div class="bian"></div>
+									<div class="name elli">人像</div>
+									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>
+									<div class="more">
+										<a href=people.jsp><img alt="" src="images/btn3.png"></a>
+									</div>
+								</div>
+								<div class="title">
+									<h4 data-href="javascript:void(0)">
+										<a href="javascript:;" class="elli">人像</a>
+										<!-- <span><img alt="" src="images/64145427964285.png"></span> -->
+									</h4>
+									<div class="p">
+										<div class="p_l">
+											  <script
+													src="./c(1).aspx"></script></span> <script
+													src="./zan_case(2).aspx"></script></span> <span><div
+													class="bshare-custom">
+													<div class="bsPromo bsPromo2"></div>
+													 
+												</div></span>
+										</div>
+										 
+									</div>
+								</div>
+							</div>
+						</li>
 
 						<li class="wow fadeInUp">
 							<div class="zbox">
@@ -128,6 +161,42 @@
 												</div></span>
 										</div>
 									
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="wow fadeInUp">
+							<div class="zbox">
+								<div class="img" data-href="javascript:void(0)">
+									<img alt="北京乐益口腔健康品牌" src="images/11845961.jpg" width="100%">
+									<div class="bian"></div>
+									<div class="name elli">动物</div>
+									<div class="p">守候着，陪伴着你的一生</div>
+									<div class="more">
+										<a href=animals.jsp><img alt="" src="images/btn3.png"></a>
+									</div>
+								</div>
+								<div class="title">
+									<h4 data-href="javascript:void(0)">
+										<a href="javascript:;" class="elli">动物</a>
+										<!-- <span><img alt="" src="images/116985794.png"></span> -->
+									</h4>
+									<div class="p">
+										<!-- <div class="p_l">
+											<span><img alt="" src="images/ico3_2.png"> <script
+													src="./c(4).aspx"></script></span>
+										</div> -->
+										<div class="p_l">
+										  <script
+													src="./c(3).aspx"></script></span>   <script
+													src="./zan_case(4).aspx"></script></span> <span><div
+													class="bshare-custom">
+													<div class="bsPromo bsPromo2"></div>
+													 
+												</div></span>
+										</div>
+										 
 									</div>
 								</div>
 							</div>
@@ -165,37 +234,7 @@
 							</div>
 						</li>
 
-						<li class="wow fadeInUp">
-							<div class="zbox">
-								<div class="img" data-href="javascript:void(0);">
-									<img alt="君搜宝官网" src="images/896839.jpg" width="100%">
-									<div class="bian"></div>
-									<div class="name elli">人像</div>
-									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>
-									<div class="more">
-										<a href=people.jsp><img alt="" src="images/btn3.png"></a>
-									</div>
-								</div>
-								<div class="title">
-									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">人像</a>
-										<!-- <span><img alt="" src="images/64145427964285.png"></span> -->
-									</h4>
-									<div class="p">
-										<div class="p_l">
-											  <script
-													src="./c(1).aspx"></script></span> <script
-													src="./zan_case(2).aspx"></script></span> <span><div
-													class="bshare-custom">
-													<div class="bsPromo bsPromo2"></div>
-													 
-												</div></span>
-										</div>
-										 
-									</div>
-								</div>
-							</div>
-						</li>
+						
 
 						<li class="wow fadeInUp">
 							<div class="zbox">
@@ -261,41 +300,7 @@
 							</div>
 						</li>
 
-						<li class="wow fadeInUp">
-							<div class="zbox">
-								<div class="img" data-href="javascript:void(0)">
-									<img alt="北京乐益口腔健康品牌" src="images/11845961.jpg" width="100%">
-									<div class="bian"></div>
-									<div class="name elli">动物</div>
-									<div class="p">守候着，陪伴着你的一生</div>
-									<div class="more">
-										<a href=animals.jsp><img alt="" src="images/btn3.png"></a>
-									</div>
-								</div>
-								<div class="title">
-									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">动物</a>
-										<!-- <span><img alt="" src="images/116985794.png"></span> -->
-									</h4>
-									<div class="p">
-										<!-- <div class="p_l">
-											<span><img alt="" src="images/ico3_2.png"> <script
-													src="./c(4).aspx"></script></span>
-										</div> -->
-										<div class="p_l">
-										  <script
-													src="./c(3).aspx"></script></span>   <script
-													src="./zan_case(4).aspx"></script></span> <span><div
-													class="bshare-custom">
-													<div class="bsPromo bsPromo2"></div>
-													 
-												</div></span>
-										</div>
-										 
-									</div>
-								</div>
-							</div>
-						</li>
+						
 					</ul>
 				</div>
 			</div>

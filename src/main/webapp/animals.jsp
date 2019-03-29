@@ -86,7 +86,7 @@
 							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
+							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
 							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>

@@ -24,11 +24,45 @@
 <!--首页banner效果样式end-->
 
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
 <link href="css/slick.css" rel="stylesheet">
 <link href="css/slick-theme.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script src="js/checkform.js"></script>
+<style type="text/css">
+        .content {
+            color: #ffffff;
+            font-size: 40px;
+        }
+        .bg {
+            background: url('images/fog.jpg');
+            height:670px;
+            text-align: center;
+            line-height: 900px;
+        }
+        .bg-blur {
+            float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-filter: blur(15px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);
+        }
+        .content-front {
+          position:absolute;
+          left: 10px;
+          right: 10px;
+          height:600px;
+          line-height: 600px;
+          text-align: center;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -50,7 +84,7 @@
 							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
 					<li class="nli" id="nav1_4"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/scenery.jsp">风景</a></span></li>
+							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
 							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
@@ -86,12 +120,48 @@
 		</script>
 		
 	</div>
-	<h4 align=center>风景</h4>
+	<div class="bg bg-blur"></div>
+	
+	<div style="width: 599px;float: left;margin-left: 80px;margin-top: 100px;position:absolute;">
+		<img alt="" src="images/fog.jpg" style="border-radius:10px;">
+		<br>
+	 	<br>
+		<div style="float: left;margin-left: 215px;margin-top: 18px;"></div>
+		<a class="button button-glow button-border button-rounded button-primary">选择图片</a>
+	</div>
+	
+	<div style="width: 599px;float: right;margin-left: 806px;margin-top: 100px;position:absolute;">
+		<img alt="" style="border-radius:10px;" id="Base64">
+		<br>
+	 	<br>
+		<div style="float: left;margin-left: 238px;margin-top: 0px;">
+		<a style="display: none" id="butId" class="button button-glow button-border button-rounded button-primary">下载图片</a>
+		</div>
+	</div>
 	
 	<script type="text/javascript">
-		$(function() {
-			alert("这里开始自动获取！");
+	$(function() {
+		$.ajax({
+			type : "POST",
+			url : "${pageContext.request.contextPath }/defog/defogMethod.action",
+			data : {},//json序列化       这里对应的是图片的id
+			async : false,//这里必须要同步
+			datatype : "json", //此处不能省略 
+			contentType : "application/json; charset=utf-8",//此处不能省略 
+			success : function(data) {
+				//获取img
+				//var img = $("#Base64");
+				$("#Base64").attr("src", "data:image/jpg;base64,"+data);
+
+
+				$("#butId").css('display','block');
+				 
+			},
+			error : function(data) {
+				alert("error");
+			}
 		})
+	});
 	</script>
 </body>
 </html>

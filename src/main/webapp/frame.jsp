@@ -60,10 +60,10 @@
 							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
+							href="${pageContext.request.contextPath }/qualityEnhance.jsp">放大</a></span></li>
 
 					<li class="nli" id="nav1_6"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/home.jsp">家居</a></span></li>
+							href="${pageContext.request.contextPath }/contrastEnhance.jsp">对比</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">
@@ -109,7 +109,7 @@
 									<div class="name elli">人像</div>
 									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>
 									<div class="more">
-										<a href=people.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/people.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -141,14 +141,12 @@
 									<div class="name elli">植物</div>
 									<div class="p">娇艳欲滴的花朵</div>
 									<div class="more">
-										<a href=plants.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/plants.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
 										<a href="javascript:;" class="elli">植物</a>
-										<!-- <span><img
-											alt="" src="images/12987083479469.png"></span> -->
 									</h4>
 									<div class="p">
 										<div class="p_l">
@@ -174,7 +172,7 @@
 									<div class="name elli">动物</div>
 									<div class="p">守候着，陪伴着你的一生</div>
 									<div class="more">
-										<a href=animals.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/animals.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -207,17 +205,15 @@
 								<div class="img" data-href="javascript:void(0);">
 									<img alt="东大建筑设计集团" src="images/11786146.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">风景</div>
+									<div class="name elli">去雾</div>
 									<div class="p">不要怕，我们大多数遇见的人，只是看起来很厉害而已。</div>
 									<div class="more">
-										<a href=scenery.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/defogging.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">风景</a>
-										<!-- <span><img
-											alt="" src="images/45411698740906.png"></span> -->
+										<a href="javascript:;" class="elli">去雾</a>
 									</h4>
 									<div class="p">
 										<div class="p_l">
@@ -241,16 +237,15 @@
 								<div class="img" data-href="javascript:void(0)">
 									<img alt="北京声达木业有限公司" src="images/1005319.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">静物</div>
+									<div class="name elli">无损放大</div>
 									<div class="p">我们总回忆过去，因为在现实面前一筹莫展。</div>
 									<div class="more">
-										<a href=stilllife.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/qualityEnhance.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">静物</a>
-										<!-- <span><img alt="" src="images/111111281933.png"></span> -->
+										<a href="javascript:;" class="elli">无损放大</a>
 									</h4>
 									<div class="p">
 										<div class="p_l">
@@ -273,16 +268,15 @@
 								<div class="img" data-href="javascript:void(0)">
 									<img alt="大智金科" src="images/14554088.jpg" width="100%">
 									<div class="bian"></div>
-									<div class="name elli">家居</div>
+									<div class="name elli">对比增强</div>
 									<div class="p">我在杯子里看到你的容颜，却已是匆匆那年。</div>
 									<div class="more">
-										<a href=home.jsp><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/contrastEnhance.jsp"><img alt="" src="images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
 									<h4 data-href="javascript:void(0)">
-										<a href="javascript:;" class="elli">家居</a>
-										<!-- <span><img alt="" src="./116897887.png"></span> -->
+										<a href="javascript:;" class="elli">对比增强</a>
 									</h4>
 									<div class="p">
 										<div class="p_l">
@@ -299,8 +293,6 @@
 								</div>
 							</div>
 						</li>
-
-						
 					</ul>
 				</div>
 			</div>

@@ -39,7 +39,6 @@ public class UserController {
 					return new DataResp();
 				}
 			}
-
 			// 数据库不存当前注册用,允许注册
 
 			return userService.addUser(user);

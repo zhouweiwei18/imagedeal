@@ -87,10 +87,10 @@
 							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
 					<li class="nli" id="nav1_5"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/stilllife.jsp">静物</a></span></li>
+							href="${pageContext.request.contextPath }/qualityEnhance.jsp">放大</a></span></li>
 
 					<li class="nli" id="nav1_6"><span><a target="_blank"
-							href="${pageContext.request.contextPath }/home.jsp">家居</a></span></li>
+							href="${pageContext.request.contextPath }/contrastEnhance.jsp">对比</a></span></li>
 
 					<!-- 用户没有登录 -->
 					<c:if test="${empty user}">
@@ -153,9 +153,7 @@
 				//var img = $("#Base64");
 				$("#Base64").attr("src", "data:image/jpg;base64,"+data);
 
-
 				$("#butId").css('display','block');
-				 
 			},
 			error : function(data) {
 				alert("error");

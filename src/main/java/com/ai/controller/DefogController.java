@@ -24,7 +24,8 @@ public class DefogController {
 		String url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/dehaze";
 		try {
 			// 本地文件路径
-			String filePath = "D:\\Picture\\fog.jpg";
+			//String filePath = "D:\\Picture\\fog.jpg";
+			String filePath = "/usr/share/pixmaps/fog.jpg";
 			byte[] imgData = FileUtil.readFileByBytes(filePath);
 			String imgStr = Base64Util.encode(imgData);
 			String imgParam = URLEncoder.encode(imgStr, "UTF-8");

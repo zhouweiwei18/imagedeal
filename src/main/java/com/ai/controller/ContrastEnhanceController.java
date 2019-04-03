@@ -14,7 +14,8 @@ public class ContrastEnhanceController {
 	@ResponseBody
 	public String contrastEnhance(String imagePath) {
 
-		imagePath = "D:\\Picture\\5.jpg";
+		//imagePath = "D:\\Picture\\5.jpg";
+		imagePath = "/usr/share/pixmaps/5.jpg";
 
 		return ContrastUtil.getUtil().contrastEnhance(imagePath);
 	}

@@ -21,7 +21,8 @@ public class AnimalController {
 		// 假设这是一张植物类别的图片(路径)=========应该是变量
 		if (animalPath == null) {
 			// 这里对于本机而言
-			animalPath = "D:\\Picture\\cat.jpg";
+			//animalPath = "D:\\Picture\\cat.jpg";
+			animalPath = "/usr/share/pixmaps/cat.jpg";
 		}
 
 		JSONObject obj = ImageUtil.getUtil().animalIdentification(animalPath);

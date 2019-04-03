@@ -76,18 +76,18 @@
 					<li class="nli first" id="nav1_1"><span><a
 							target="_self" href="${pageContext.request.contextPath }/people.jsp">人像</a></span></li>
 					<li class="nli" id="nav1_2"><span>
-					<a target="_blank" href="${pageContext.request.contextPath }/plants.jsp">植物</a></span>
+					<a target="_self" href="${pageContext.request.contextPath }/plants.jsp">植物</a></span>
 					</li>
-					<li class="nli" id="nav1_3"><span><a target="_blank"
+					<li class="nli" id="nav1_3"><span><a target="_self"
 							href="${pageContext.request.contextPath }/animals.jsp">动物</a></span></li>
 
-					<li class="nli" id="nav1_4"><span><a target="_blank"
+					<li class="nli" id="nav1_4"><span><a target="_self"
 							href="${pageContext.request.contextPath }/defogging.jsp">去雾</a></span></li>
 
-					<li class="nli" id="nav1_5"><span><a target="_blank"
+					<li class="nli" id="nav1_5"><span><a target="_self"
 							href="${pageContext.request.contextPath }/qualityEnhance.jsp">放大</a></span></li>
 
-					<li class="nli" id="nav1_6"><span><a target="_blank"
+					<li class="nli" id="nav1_6"><span><a target="_self"
 							href="${pageContext.request.contextPath }/contrastEnhance.jsp">对比</a></span></li>
 
 					<!-- 用户没有登录 -->
@@ -128,8 +128,8 @@
 		<a class="button button-glow button-border button-rounded button-primary">选择图片</a>
 	</div>
 	
-	<div style="float: right;position:absolute;margin-left: 713px;margin-top: 80px;">
-		<table id="info" class="table table-hover" style="text-align: center;width: 700px;float:right;">
+	<div style="float: right;position:absolute;margin-left: 850px;margin-top: 130px;">
+		<table id="info" class="table table-hover" style="text-align: center;width: 200px;float:right;">
 		</table>
 	</div>
 	
@@ -143,9 +143,68 @@
 				datatype : "json", //此处不能省略 
 				contentType : "application/json; charset=utf-8",//此处不能省略 
 				success : function(data) {
-					 
-					alert("数据接收成功！");
-					 
+					var tab = $("#info");
+					
+					//alert("数据接收成功！");
+					
+					 $.each(data['result'].face_list, function(i, item) {
+						 //alert(data.result[i].score);
+						 //alert(data.result[i].name);
+					     //alert(data.result[i].baike_info.baike_url);
+						 //alert(data.result[i].baike_info.description);
+						 //下面将数据写入页面
+						 //获取表格
+					
+						 var age = data.result.face_list[i].age ;
+						 
+						 var sex = data.result.face_list[i].gender.type;
+						 if(sex=='female'){
+							 sex=sex.replace(/female/, "女性");
+						 }else{
+							 sex=sex.replace(/male/, "男性");
+						 }
+						 
+						 var race = data.result.face_list[i].race.type;
+						 if(race=='yellow'){
+							 race=race.replace(/yellow/, "黄种人");
+						 }else if(race=='white'){
+							 race=race.replace(/white/, "白种人");
+						 }
+						 
+						 var beauty = data.result.face_list[i].beauty;
+						 
+						 var emotion = data.result.face_list[i].emotion.type;
+						 if(emotion=='happy'){
+							 emotion=emotion.replace(/happy/, "高兴");
+						 }else if(emotion=='none'){
+							 emotion=emotion.replace(/none/, "无情绪");
+						 }
+						 
+						 var glasses = data.result.face_list[i].glasses.type;
+						 if(glasses=='none'){
+							 glasses=glasses.replace(/none/, "无眼镜");
+						 }else if(glasses=='common'){
+							 glasses=glasses.replace(/common/, "普通眼镜");
+						 }
+						 
+						 var expression = data.result.face_list[i].expression.type;
+						 if(expression=='none'){
+							 expression=expression.replace(/none/, "不笑");
+						 }else if(expression=='smile'){
+							 expression=expression.replace(/smile/, "微笑");
+						 }
+						 
+						 var trs = 
+							"<tr >"+"<td class='td1'>年龄:</td><td class='td2'>"+age+"岁</td>"+"</tr>"+
+	 						"<tr >"+"<td class='td1'>性别:</td><td class='td2'>"+sex+"</td>"+"</tr>"+
+						 	"<tr >"+"<td class='td1'>种族:</td><td class='td2'>"+race+"</td>"+"</tr>"+
+							"<tr >"+"<td class='td1'>颜值:</td><td class='td2'>"+beauty+"</td>"+"</tr>"+
+							"<tr >"+"<td class='td1'>情绪:</td><td class='td2'>"+emotion+"</td>"+"</tr>"+
+							"<tr >"+"<td class='td1'>眼镜:</td><td class='td2'>"+glasses+"</td>"+"</tr>"+
+							"<tr >"+"<td class='td1'>表情:</td><td class='td2'>"+expression+"</td>"+"</tr>"	;
+
+						tab.append(trs);
+					});
 				},
 				error : function(data) {
 					alert("error");

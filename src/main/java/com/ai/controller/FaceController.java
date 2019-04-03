@@ -21,7 +21,8 @@ public class FaceController {
 		// 假设这是一张植物类别的图片(路径)=========应该是变量
 		if (facePath == null) {
 			// 这里对于本机而言
-			facePath = "D:\\Picture\\girlface.jpg";
+			//facePath = "D:\\Picture\\girlface.jpg";
+			facePath = "/usr/share/pixmaps/girlface.jpg";
 		}
 
 		return FaceUtil.getUtil().check(facePath);

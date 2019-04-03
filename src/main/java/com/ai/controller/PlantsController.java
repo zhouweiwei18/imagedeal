@@ -25,7 +25,8 @@ public class PlantsController {
 
 		if (plantsPath == null) {
 			// 这里对于本机而言
-			plantsPath = "D:\\Picture\\sunflower.jpg";
+			//plantsPath = "D:\\Picture\\sunflower.jpg";
+			plantsPath = "/usr/share/pixmaps/sunflower.jpg";
 		}
 
 		JSONObject obj = ImageUtil.getUtil().plantIdentification(plantsPath);

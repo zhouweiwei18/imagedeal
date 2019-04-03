@@ -14,7 +14,8 @@ public class QualityEnhanceController {
 	@ResponseBody
 	public String qualityEnhance(String imagePath) {
 
-		imagePath = "D:\\Picture\\boy.jpg.png";
+		//imagePath = "D:\\Picture\\boy.jpg.png";
+		imagePath = "/usr/share/pixmaps/boy.jpg.png";
 
 		return QualityUtil.getUtil().imageQualityEnhance(imagePath);
 	}

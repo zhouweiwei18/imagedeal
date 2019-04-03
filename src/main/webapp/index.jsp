@@ -5,7 +5,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>响应式的网络建站企业网站模板</title>
+<title>PICTURE DEAL</title>
 
 <link href="${pageContext.request.contextPath }/css/demo.css" rel="stylesheet" media="all">
 

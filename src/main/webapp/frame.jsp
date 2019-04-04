@@ -16,19 +16,19 @@
 <meta name="description" content=" ">
 
 <!--首页动态效果样式-->
-<link href="css/animate.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/animate.css" rel="stylesheet">
 <!--首页动态效果样式end-->
 <!--首页banner效果样式-->
-<link href="css/global.css" rel="stylesheet">
-<link href="css/fix.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/global.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/fix.css" rel="stylesheet">
 <!--首页banner效果样式end-->
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/slick.css" rel="stylesheet">
-<link href="css/slick-theme.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script src="js/checkform.js"></script>
+<link href="${pageContext.request.contextPath }/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/slick.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/slick-theme.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.2.min.js"></script>
+<script src="${pageContext.request.contextPath }/js/checkform.js"></script>
 
 </head>
 <body>
@@ -104,12 +104,12 @@
 					<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0);">
-									<img alt="" src="images/face.PNG" width="100%">
+									<img alt="" src="${pageContext.request.contextPath }/images/face.PNG" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">人像</div>
 									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/people.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/people.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -136,12 +136,12 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="图伽汽车科技" src="images/11912080.jpg" width="100%">
+									<img alt="图伽汽车科技" src="${pageContext.request.contextPath }/images/11912080.jpg" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">植物</div>
 									<div class="p">娇艳欲滴的花朵</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/plants.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/plants.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -167,12 +167,12 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="北京乐益口腔健康品牌" src="images/11845961.jpg" width="100%">
+									<img alt="北京乐益口腔健康品牌" src="${pageContext.request.contextPath }/images/11845961.jpg" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">动物</div>
 									<div class="p">守候着，陪伴着你的一生</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/animals.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/animals.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -203,12 +203,12 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0);">
-									<img alt="东大建筑设计集团" src="images/11786146.jpg" width="100%">
+									<img alt="东大建筑设计集团" src="${pageContext.request.contextPath }/images/11786146.jpg" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">去雾</div>
 									<div class="p">不要怕，我们大多数遇见的人，只是看起来很厉害而已。</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/defogging.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/defogging.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -235,12 +235,12 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="北京声达木业有限公司" src="images/1005319.jpg" width="100%">
+									<img alt="北京声达木业有限公司" src="${pageContext.request.contextPath }/images/1005319.jpg" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">无损放大</div>
 									<div class="p">我们总回忆过去，因为在现实面前一筹莫展。</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/qualityEnhance.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/qualityEnhance.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">
@@ -266,12 +266,12 @@
 						<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0)">
-									<img alt="大智金科" src="images/14554088.jpg" width="100%">
+									<img alt="大智金科" src="${pageContext.request.contextPath }/images/14554088.jpg" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">对比增强</div>
 									<div class="p">我在杯子里看到你的容颜，却已是匆匆那年。</div>
 									<div class="more">
-										<a href="${pageContext.request.contextPath }/contrastEnhance.jsp"><img alt="" src="images/btn3.png"></a>
+										<a href="${pageContext.request.contextPath }/contrastEnhance.jsp"><img alt="" src="${pageContext.request.contextPath }/images/btn3.png"></a>
 									</div>
 								</div>
 								<div class="title">

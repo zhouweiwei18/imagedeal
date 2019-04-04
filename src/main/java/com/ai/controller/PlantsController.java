@@ -38,7 +38,7 @@ public class PlantsController {
 		
 		if (imagePath == null) {
 			// 加载本机默认图片进行识别
-			plantsPath = "D:\\Picture\\sunflower.jpg";
+			plantsPath = "/usr/share/pixmaps/sunflower.jpg";
 
 		}
 

@@ -41,7 +41,7 @@ public class DefogController {
 
 			if (imagePath == null) {
 				// 加载本机默认图片进行识别
-				fogPath = "D:\\Picture\\fog.jpg";
+				fogPath = "/usr/share/pixmaps/fog.jpg";
 			}
 
 			// 本地文件路径

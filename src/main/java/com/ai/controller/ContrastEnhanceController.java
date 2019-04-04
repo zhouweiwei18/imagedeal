@@ -32,7 +32,7 @@ public class ContrastEnhanceController {
 
 		if (Path == null) {
 			// 加载本机默认图片进行识别
-			imagePath = "D:\\Picture\\5.jpg";
+			imagePath = "/usr/share/pixmaps/5.jpg";
 		}
 
 		//imagePath = "D:\\Picture\\5.jpg";

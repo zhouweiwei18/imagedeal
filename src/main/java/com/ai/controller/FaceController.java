@@ -40,8 +40,7 @@ public class FaceController {
 		// 根据地址找到对应的图片，进行图片识别
 		if (imagePath == null) {
 			// 加载本机默认图片进行识别
-			facePath = "D:\\Picture\\girlface.jpg";
-
+			facePath = "/usr/share/pixmaps/girlface.jpg";
 		}
 
 		//System.out.println(facePath);

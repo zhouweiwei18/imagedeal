@@ -35,7 +35,7 @@ public class AnimalController {
 
 		if (imagePath == null) {
 			// 加载本机默认图片进行识别
-			animalPath = "D:\\Picture\\xy.jpg";
+			animalPath = "/usr/share/pixmaps/xy.jpg";
 		}
 
 		JSONObject obj = ImageUtil.getUtil().animalIdentification(animalPath);

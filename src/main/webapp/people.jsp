@@ -30,7 +30,7 @@
 <link href="${pageContext.request.contextPath }/css/slick-theme.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.2.min.js"></script>
-<script src="js/checkform.js"></script>
+<script src="${pageContext.request.contextPath }/js/checkform.js"></script>
 <style type="text/css">
 .content {
 	color: #ffffff;
@@ -73,7 +73,7 @@
 			<div class="menu">
 				<ul>
 					<li class="nli first" id="nav1_1"><span> <a
-							target="_self" href="index.jsp">首页</a>
+							target="_self" href="${pageContext.request.contextPath }/index.jsp">首页</a>
 					</span></li>
 					<li class="nli first" id="nav1_1"><span><a
 							target="_self"

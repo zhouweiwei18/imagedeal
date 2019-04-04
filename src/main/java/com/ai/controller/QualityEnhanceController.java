@@ -32,7 +32,7 @@ public class QualityEnhanceController {
 
 		if (Path == null) {
 			// 加载本机默认图片进行识别
-			imagePath = "D:\\Picture\\boy.jpg.png";
+			imagePath = "/usr/share/pixmaps/boy.jpg.png";
 		}
 
 		return QualityUtil.getUtil().imageQualityEnhance(imagePath);

@@ -132,7 +132,7 @@
 		</c:if>
 		
 		<c:if test="${empty animalImagePath}">
-			<img alt="" id="simg" src="${pageContext.request.contextPath }/images/cat.jpg" style="border-radius:10px;">
+			<img alt="" id="simg" src="${pageContext.request.contextPath }/images/xy.jpg" style="border-radius:10px;">
 		</c:if>
 		
 		<br>

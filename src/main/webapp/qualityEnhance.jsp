@@ -16,27 +16,27 @@
 <meta name="description" content=" ">
 
 <!--首页动态效果样式-->
-<link href="css/animate.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/animate.css" rel="stylesheet">
 <!--首页动态效果样式end-->
 <!--首页banner效果样式-->
-<link href="css/global.css" rel="stylesheet">
-<link href="css/fix.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/global.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/fix.css" rel="stylesheet">
 <!--首页banner效果样式end-->
 
-<link href="css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/bootstrap.css" rel="stylesheet">
 <link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
-<link href="css/slick.css" rel="stylesheet">
-<link href="css/slick-theme.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script src="js/checkform.js"></script>
+<link href="${pageContext.request.contextPath }/css/slick.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/slick-theme.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.2.min.js"></script>
+<script src="${pageContext.request.contextPath }/js/checkform.js"></script>
 <style type="text/css">
         .content {
             color: #ffffff;
             font-size: 40px;
         }
         .bg {
-            background: url('images/boy.jpg.png');
+            background: url('${pageContext.request.contextPath }/images/boy.jpg.png');
             height:670px;
             text-align: center;
             line-height: 900px;
@@ -123,22 +123,57 @@
 	<div class="bg bg-blur"></div>
 	
 	<div style="width: 599px;float: left;margin-left: 72px;margin-top: 100px;position:absolute;background:#000; color:#FFF">
-		<img src="images/boy.jpg.png" style="border-radius:10px;width:530px;height:330px;margin-left: 36px;margin-top: 20px;">
+		
+		<c:if test="${!empty qualityImagePath}">
+			<img alt="" src="../../img/${qualityImagePath}"
+				style="border-radius:10px;width:530px;height:330px;margin-left: 36px;margin-top: 20px;">
+		</c:if>
+		
+		<c:if test="${empty qualityImagePath}">
+			<%-- <img alt="" id="simg" src="${pageContext.request.contextPath }/images/fog.jpg" style="border-radius:10px;"> --%>
+		<img src="${pageContext.request.contextPath }/images/boy.jpg.png" id="simg" style="border-radius:10px;width:530px;height:330px;margin-left: 36px;margin-top: 20px;">
+		</c:if>
+	 
 		<br>
 	 	<br>
 		<div style="float: left;margin-left: 215px;margin-top: 15px;margin-bottom: 5px;">
-			<a class="button button-glow button-border button-rounded button-primary">选择图片</a>
+			<a class="button button-glow button-border button-rounded button-primary" onclick="$('input[id=lefile]').click();">选择图片</a>
 		</div>
 	</div>
+	
+	<form action="${pageContext.request.contextPath }/quality/qualityChange.action"
+		enctype="multipart/form-data" method="post" id="picForm">
+		<input id="lefile" type="file" name="file" style="display: none;"/>
+	</form>
 	
 	<div style="width: 710px;float: right;margin-left: 750px;margin-top: 100px;position:absolute;">
 		<img alt=""  style="border-radius:10px;" id="Base64">
 		<br>
 	 	<br>
 		<div style="float: left;margin-left: 303px;margin-top: 0px;">
-		<a style="display: none" id="butId" class="button button-glow button-border button-rounded button-primary">下载图片</a>
+		<a style="display: none" id="butId" onclick="downloadFile('download.jpg',$('#Base64')[0].src)" class="button button-glow button-border button-rounded button-primary">下载图片</a>
 		</div>
 	</div>
+	
+	
+	<!-- 打开本地文件(图片) -->
+	<script type="text/javascript">
+	  $('input[id=lefile]').change(function(){ //file点击事件
+		   var file = this.files[0];                                                             //获取文件
+		   if (window.FileReader) {  //如果浏览器支持FileReader
+		       var reader = new FileReader(); //新建一个FileReader对象
+		       reader.readAsDataURL(file); //读取文件url
+		       reader.onloadend = function (e) { 
+		           console.log(e);                                                             //输出e,查看其参数
+		           console.log(e.target.result); //通过e,输出图片的base64码
+		           $("#simg").attr("src",e.target.result);//将base64码填入src,用于预览
+
+		           //提交表单
+		           $("#picForm").submit();
+		       };    
+		   }
+		 });
+	</script>
 	
 	<script type="text/javascript">
 	$(function() {
@@ -161,6 +196,36 @@
 			}
 		})
 	});
+	
+	
+function downloadFile(fileName, content) {
+		
+		//fileName = fileName.substring(str.length-5);
+        let aLink = document.createElement('a');
+        let blob = this.base64ToBlob(content); //new Blob([content]);
+
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("click", true, true);//initEvent 不加后两个参数在FF下会报错  事件类型，是否冒泡，是否阻止浏览器的默认行为
+        aLink.download = fileName;
+        aLink.href = URL.createObjectURL(blob);
+        // aLink.dispatchEvent(evt);
+       // aLink.click()
+        aLink.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));//兼容火狐
+      }
+      //base64转blob
+     function base64ToBlob(code) {
+        let parts = code.split(';base64,');
+        let contentType = parts[0].split(':')[1];
+        let raw = window.atob(parts[1]);
+        let rawLength = raw.length;
+
+        let uInt8Array = new Uint8Array(rawLength);
+
+        for (let i = 0; i < rawLength; ++i) {
+          uInt8Array[i] = raw.charCodeAt(i);
+        }
+        return new Blob([uInt8Array], {type: contentType});
+      }
 	</script>
 	
 </body>

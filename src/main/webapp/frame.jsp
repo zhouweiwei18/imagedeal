@@ -104,7 +104,7 @@
 					<li class="wow fadeInUp">
 							<div class="zbox">
 								<div class="img" data-href="javascript:void(0);">
-									<img alt="君搜宝官网" src="images/896839.jpg" width="100%">
+									<img alt="" src="images/face.PNG" width="100%">
 									<div class="bian"></div>
 									<div class="name elli">人像</div>
 									<div class="p">在你面前我很傻，疯疯癫癫到天涯。</div>

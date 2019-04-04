@@ -26,7 +26,7 @@ public class FaceController {
 	@ResponseBody
 	public Map<String, Object> faceIdent(String facePath, HttpServletRequest request) {
 
-		System.out.println(facePath);
+		//System.out.println(facePath);
 
 		String imagePath = (String) request.getSession().getAttribute("imagePath");
 
@@ -38,16 +38,15 @@ public class FaceController {
 		// 由于post提交方式存在问题。先从session中获取图片路径
 
 		// 根据地址找到对应的图片，进行图片识别
-		if (facePath == null) {
+		if (imagePath == null) {
 			// 加载本机默认图片进行识别
 			facePath = "D:\\Picture\\girlface.jpg";
 
 		}
 
-		System.out.println(facePath);
+		//System.out.println(facePath);
 
 		return FaceUtil.getUtil().check(facePath);
-
 	}
 
 	@RequestMapping(value = "/faceChange", method = RequestMethod.POST)

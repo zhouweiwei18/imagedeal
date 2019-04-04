@@ -199,8 +199,8 @@
 
 	<script type="text/javascript">
 		$(function() {
-			var image = '${imagePath }';
-			alert(image);
+			//var image = '${imagePath }';
+			//alert(image);
 			$.ajax({
 				type : "post",
 				url : "${pageContext.request.contextPath }/face/faceIdent.action",

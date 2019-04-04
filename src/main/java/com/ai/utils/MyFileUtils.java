@@ -24,6 +24,9 @@ public class MyFileUtils {
 		ResourceBundle bundle = ResourceBundle.getBundle("jdbc");
 		location = bundle.getString("file_loaction");
 	}
+	
+	public static String des = location + File.separator;
+
 
 	public static String uploadFile(HttpServletRequest request, MultipartFile file) throws IOException {
 		if (!file.isEmpty()) {
@@ -62,7 +65,7 @@ public class MyFileUtils {
 
 	public static ResponseEntity<byte[]> getFile(String filename) throws Exception {
 		HttpHeaders headers = new HttpHeaders();
-		File file = new File(location +"\\"+ filename);
+		File file = new File(location + "\\" + filename);
 
 		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 		headers.setContentDispositionFormData("attachment", filename);

@@ -72,8 +72,13 @@ public class UserController {
 
 	@RequestMapping("/userLoginNoFace")
 	public String login(User user, HttpServletRequest request) {
-		
-		userService.login(user, request);
+
+		int i = userService.login(user, request);
+
+		if (i != 1) {
+
+			return "login";
+		}
 
 		return "index";
 	}

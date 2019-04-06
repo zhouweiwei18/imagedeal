@@ -30,6 +30,6 @@ public interface UserService {
 	// 用户登录
 	DataResp login(User user, boolean password,HttpServletRequest request);
 	
-	void login(User user,HttpServletRequest request);
+	int login(User user,HttpServletRequest request);
 
 }

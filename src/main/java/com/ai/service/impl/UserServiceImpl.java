@@ -28,23 +28,32 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void login(User user, HttpServletRequest request) {
+	public int login(User user, HttpServletRequest request) {
 		UserExample example = new UserExample();
 		example.createCriteria().andUsernameEqualTo(user.getUsername());
 		example.createCriteria().andPasswordEqualTo(user.getPassword());
 		List<User> list = userDao.selectByExample(example);
 		if (list != null&&list.size()>0) {
-			// dataResp.setMessage("登陆成功");
-
-			// 查看session中是否已经存在该用户
-			// 获得session
-			HttpSession session = request.getSession();
-			User userSession = (User) session.getAttribute("user");
-			// 若session中没有用户信息，则放入该用户对象
-			if (userSession == null) {
-				session.setAttribute("user", list.get(0));
+			//看密码是否匹配
+			if(user.getPassword().equals(list.get(0).getPassword())) {
+				
+				// 查看session中是否已经存在该用户
+				// 获得session
+				HttpSession session = request.getSession();
+				User userSession = (User) session.getAttribute("user");
+				// 若session中没有用户信息，则放入该用户对象
+				if (userSession == null) {
+					session.setAttribute("user", list.get(0));
+				}
+				return 1;
 			}
+  
+			//密码不对
+			return 0;
 		}
+		
+		//不存在该用户
+		return 0;
 
 	}
 

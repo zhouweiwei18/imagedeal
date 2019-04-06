@@ -14,6 +14,7 @@
 <!--动态效果样式-->
 <link href="${pageContext.request.contextPath }/files/animate.css"
 	rel="stylesheet">
+<link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
 <!--动态效果样式end-->
 <link href="${pageContext.request.contextPath }/files/style.css"
 	rel="stylesheet">
@@ -120,8 +121,9 @@
 					<img ref="previewImg" src="">
 				</div>
 				<div style="color: white;" id="loginbutton">
-					<input style="width: 100px; height: 30px;" type="button"
-						@click="handleSubmit" value="提交">
+					<!-- <input style="width: 100px; height: 30px;" type="button"
+						@click="handleSubmit" value="提交"> -->
+						<a class="button button-glow button-border button-rounded button-primary" @click="handleSubmit">提交</a>
 				</div>
 			</div>
 		</div>

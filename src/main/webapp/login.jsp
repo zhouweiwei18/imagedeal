@@ -14,9 +14,9 @@
 <link rel="icon" href="http://www3.junsobao.com/static/jsb/favicon.ico"
 	type="image/x-icon">
 <!--动态效果样式-->
-<link href="files/animate.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/files/animate.css" rel="stylesheet">
 <!--动态效果样式end-->
-<link href="files/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/files/style.css" rel="stylesheet">
     
     <style>
         .wrapper{
@@ -34,7 +34,7 @@
 <body id="particles">
 	<canvas class="pg-canvas" width="1536" height="706"></canvas>
 	<div class="intro" id="app">
-		<form accept-charset="UTF-8" role="form" id="loginform">
+		<form accept-charset="UTF-8" role="form" id="loginform" action="${pageContext.request.contextPath }/user/userLoginNoFace.action">
 			<div class="pf1 pf2">
 				<div class="c_form1" id="logindiv">
 					<div class="title1">客户登录</div>
@@ -51,7 +51,7 @@
 							type="text" name="yzm">
 					</div>
 					<div class="fr1">
-						<img src="files/captcha.html" alt="" width="100" height="35"
+						<img src="${pageContext.request.contextPath }/files/captcha.html" alt="" width="100" height="35"
 							onclick="reImg()" id="yzm"
 							style="cursor: pointer; border: solid 1px #ccc; float: right;">
 					</div>
@@ -60,7 +60,7 @@
 					<!-- <input type="button" class="a2"  style="width: 150px;margin-left: 50px;" value="刷脸登录"> -->
 					<div class="d_link1">
 						<a href="javascript:void(0);">忘记密码？</a><span>&nbsp;|&nbsp;&nbsp;</span><a
-							href="reg.jsp" class="a3">立即注册</a>
+							href="${pageContext.request.contextPath }/reg.jsp" class="a3">立即注册</a>
 					</div>
 				</div>
 			</div>
@@ -98,13 +98,13 @@
     </div>
 	</div>
 	
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
 
 	<script type="text/javascript"
-		src="files/jquery.particleground.min.js"></script>
-	<script type="text/javascript" src="files/demo.js"></script>
-	<script type="text/javascript" src="files/wow.min.js"></script>
+		src="${pageContext.request.contextPath }/files/jquery.particleground.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/files/demo.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/files/wow.min.js"></script>
 	<script type="text/javascript">
 	
 		function hide() {
@@ -117,7 +117,7 @@
 	
 		$("#loginform").submit(function() {
 			$.ajax({
-				url : '/member/login/login.html',
+				url : '${pageContext.request.contextPath }/member/login/login.html',
 				type : "POST",
 				data : $("#loginform").serialize(),
 				success : function(data) {
@@ -230,7 +230,7 @@
 
                     // 登陆请求
                     $.ajax({
-                        url: 'user/userLogin.action',
+                        url: '${pageContext.request.contextPath }/user/userLogin.action',
                         data: {
                             username: _this.username,
                             password: _this.password,

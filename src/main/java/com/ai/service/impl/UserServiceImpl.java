@@ -21,6 +21,33 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userDao;
 
+	@Override
+	public void addUserNoFace(User user) {
+
+		userDao.insert(user);
+	}
+
+	@Override
+	public void login(User user, HttpServletRequest request) {
+		UserExample example = new UserExample();
+		example.createCriteria().andUsernameEqualTo(user.getUsername());
+		example.createCriteria().andPasswordEqualTo(user.getPassword());
+		List<User> list = userDao.selectByExample(example);
+		if (list != null&&list.size()>0) {
+			// dataResp.setMessage("登陆成功");
+
+			// 查看session中是否已经存在该用户
+			// 获得session
+			HttpSession session = request.getSession();
+			User userSession = (User) session.getAttribute("user");
+			// 若session中没有用户信息，则放入该用户对象
+			if (userSession == null) {
+				session.setAttribute("user", list.get(0));
+			}
+		}
+
+	}
+
 	public DataResp login(User user, boolean passwordLogin, HttpServletRequest request) {
 		DataResp dataResp = new DataResp();
 		// 判断是否是刷脸登陆
@@ -70,7 +97,7 @@ public class UserServiceImpl implements UserService {
 			user = (User) userDao.selectByExample(example);
 			if (user != null) {
 				dataResp.setMessage("登陆成功");
-				
+
 				// 查看session中是否已经存在该用户
 				// 获得session
 				HttpSession session = request.getSession();
@@ -79,7 +106,7 @@ public class UserServiceImpl implements UserService {
 				if (userSession == null) {
 					session.setAttribute("user", user);
 				}
-				
+
 				dataResp.setCode(DataResp.Code.SUCCESS);
 				dataResp.setData(user);
 			} else {
@@ -91,7 +118,6 @@ public class UserServiceImpl implements UserService {
 		return dataResp;
 	}
 
- 
 	public DataResp addUser(User user) {
 		// 识别人脸
 		DataResp dataResp = FaceHelper.faceDetect(user.getFacecode());
@@ -137,7 +163,6 @@ public class UserServiceImpl implements UserService {
 
 	}
 
- 
 	public List<User> selectUserByName(String username) {
 
 		UserExample example = new UserExample();

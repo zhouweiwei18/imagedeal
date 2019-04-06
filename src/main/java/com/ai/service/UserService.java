@@ -11,6 +11,8 @@ import com.ai.model.UserExample;
 public interface UserService {
 
 	DataResp addUser(User user);
+	
+	void addUserNoFace(User user);
 
 	List<User> getAllUser(UserExample example);
 
@@ -27,5 +29,7 @@ public interface UserService {
 
 	// 用户登录
 	DataResp login(User user, boolean password,HttpServletRequest request);
+	
+	void login(User user,HttpServletRequest request);
 
 }

@@ -17,17 +17,19 @@
 <!--动态效果样式end-->
 <link href="${pageContext.request.contextPath }/files/style.css"
 	rel="stylesheet">
-	
+
 <style>
-   .wrapper{
-       text-align: center;
-   }
-   .face-wrapper{
-       margin: 20px;
-   }
-   .face-wrapper canvas{
-       display: none;
-   }
+.wrapper {
+	text-align: center;
+}
+
+.face-wrapper {
+	margin: 20px;
+}
+
+.face-wrapper canvas {
+	display: none;
+}
 </style>
 
 <script type="text/javascript"
@@ -95,58 +97,60 @@
 						</div>
 					</div>
 
-					<div class="link1" style="width:40%;margin-left: 55px;">
-						<a href="javascript:submit();">注册</a>
+					<div class="link1" style="width: 40%; margin-left: 55px;">
+						<a href="javascript:sub();">注册</a>
 					</div>
-					
-					<div class="link1" style="width:40%;margin-left: 60px;float: left;">
+
+					<div class="link1"
+						style="width: 40%; margin-left: 60px; float: left;">
 						<a href="javascript:image();">头像采集</a>
 					</div>
 				</div>
 			</form>
 		</div>
-		
-		<div >
-        <div class="wrapper">
-        
-            <div style="height: 20px;color: white;">
-                
-            </div> 
-            <div class="info">
-                {{info}}
-            </div>
-            <div class="face-wrapper">
-                <video ref="video" width="300" height="300"></video>
-                <canvas ref="canvas" width="300" height="300"></canvas>
-                <img ref="previewImg" src="">
-            </div>
-            <div style="color: white;" id="loginbutton">
-              <input  style="width: 100px;height: 30px;" type="button" @click="handleSubmit" value="提交">
-            </div>
-        </div>
-    </div>
+
+		<div>
+			<div class="wrapper">
+
+				<div style="height: 20px; color: white;"></div>
+				<div class="info">{{info}}</div>
+				<div class="face-wrapper">
+					<video ref="video" width="300" height="300"></video>
+					<canvas ref="canvas" width="300" height="300"></canvas>
+					<img ref="previewImg" src="">
+				</div>
+				<div style="color: white;" id="loginbutton">
+					<input style="width: 100px; height: 30px;" type="button"
+						@click="handleSubmit" value="提交">
+				</div>
+			</div>
+		</div>
 
 	</div>
-	
-		<script type="text/javascript">
+
+	<script type="text/javascript">
 		 
 	    
-		 function submit() {
-			var t = $("#regform");
-			t.submit();
+		 function sub() {
+			 
+			 //alert();
+			 //获取用户名，密码
+			 var username = $("#div1").val();
+			 
+			 var password = $("#div3").val();
+			 
+			 location.href="${pageContext.request.contextPath }/user/userReg.action?username="+username+"&&password="+password;
 		} 
 		
 		function image() {
 			
 			//获取原来输入框中的name值
-			
- 
 			//将原来的div隐藏
 			$('#registediv').hide();
 		}
 	</script>
-	
-   <script>
+
+	<script>
         const CODE_SUCCESS = 0
         const CODE_ERROR = 1
         const vm = new Vue({

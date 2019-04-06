@@ -21,6 +21,23 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@RequestMapping("/userReg")
+	public String userReg(User user) {
+
+		List<User> users = userService.selectUserByName(user.getUsername());
+
+		if (users != null && users.size() > 0) {
+
+			return "reg";
+		} else {
+			// 添加用户
+			userService.addUserNoFace(user);
+
+			return "login";
+		}
+
+	}
+
 	/**
 	 * 用户注册功能
 	 */
@@ -53,4 +70,11 @@ public class UserController {
 		return userService.login(user, passwordLogin, request);
 	}
 
+	@RequestMapping("/userLoginNoFace")
+	public String login(User user, HttpServletRequest request) {
+		
+		userService.login(user, request);
+
+		return "index";
+	}
 }
